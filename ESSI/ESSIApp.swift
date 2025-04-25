@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ESSIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SnackListView()
+                .modelContainer(for: Snack.self)
         }
+    }
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }
